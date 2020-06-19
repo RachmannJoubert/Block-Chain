@@ -14,4 +14,8 @@ class Blockchain {
     createGenisisBlock() {
         return new Block(0, currentDate, "Genisis Block", "0");
     }
+
+    getLatestBlock() {
+        return this.chain[this.chain.length - 1];
+    }
 }
