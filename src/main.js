@@ -1,7 +1,4 @@
-// import { Blockchain } from './classes/Blockchain.js';
-// import { Block } from './classes/Block.js';
-
-import Blockchain from './classes/Blockchain'
+const { Blockchain } = require('./classes/Blockchain');
 
 let RC = new Blockchain();
 

@@ -1,6 +1,6 @@
-import Block from './Block'
+const { Block } = require('./Block');
 
-export class Blockchain {
+class Blockchain {
     
     constructor() {
         this.chain = [this.createGenisisBlock()];
@@ -28,4 +28,6 @@ export class Blockchain {
         return this.chain[this.chain.length - 1];
     }
 }
+
+module.exports.Blockchain = Blockchain;
 
