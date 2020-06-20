@@ -3,10 +3,9 @@ const { Blockchain } = require('./Blockchain');
 
 class Block {
     
-    constructor(index, timestamp, data, previousHash = '') {
-        this.index = index;
+    constructor(timestamp, transactions, previousHash = '') {
         this.timestamp = this.setDate();
-        this.data = data;
+        this.transactions = this.transactions;
         this.previousHash = previousHash;
         this.hash = this.calculateHash;
         this.nonce = 0;

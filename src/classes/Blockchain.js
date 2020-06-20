@@ -5,7 +5,7 @@ class Blockchain {
     constructor() {
         this.chain = [this.createGenisisBlock()];
         this.timestamp = this.setDate();
-        this.difficulty = 4;
+        this.difficulty = 10;
     }
 
     setDate() {
@@ -16,7 +16,7 @@ class Blockchain {
     }
 
     createGenisisBlock() {
-        return new Block(0, this.date, "Genisis Block", "0");
+        return new Block(this.timestamp, "Genisis Block", "0");
     }
 
     addBlock(newBlock) {
