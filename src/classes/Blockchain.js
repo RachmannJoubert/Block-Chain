@@ -4,7 +4,7 @@ class Blockchain {
     
     constructor() {
         this.chain = [this.createGenisisBlock()];
-        this.date = this.setDate();
+        this.timestamp = this.setDate();
         this.difficulty = 4;
     }
 
