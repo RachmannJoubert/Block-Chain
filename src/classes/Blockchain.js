@@ -11,22 +11,9 @@ class Blockchain {
         this.miningReward = 0.5;
     }
 
-    // setDate() {
-    //     var date = new Date();
-    //     var currentDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
-        
-    //     return currentDate;
-    // }
-
     createGenisisBlock() {
         return new Block(this.timestamp, "Genisis Block", "0");
     }
-
-    // addBlock(newBlock) {
-    //     newBlock.previousHash = this.getLatestBlock().hash;
-    //     newBlock.mineBlock(this.difficulty)
-    //     this.chain.push(newBlock);
-    // }
 
     minePendingTransactions(miningRewardAddress) {
         let block = new Block(Date.now(), this.pendingTransactions);
