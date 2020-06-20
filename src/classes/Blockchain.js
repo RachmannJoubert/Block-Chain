@@ -1,20 +1,21 @@
-import Block from './Block.js';
+import Block from './Block'
 
-class Blockchain {
+export class Blockchain {
     
     constructor() {
         this.chain = [this.createGenisisBlock()];
-        this.date = new Date();
+        this.date = this.setDate();
     }
 
-    getDate() {
-        var currentDate = this.date.getDate() + "/" + this.date.getMonth() + "/" + this.date.getFullYear();
-
+    setDate() {
+        var date = new Date();
+        var currentDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+        
         return currentDate;
     }
 
     createGenisisBlock() {
-        return new Block(0, currentDate, "Genisis Block", "0");
+        return new Block(0, this.date, "Genisis Block", "0");
     }
 
     addBlock(newBlock) {
