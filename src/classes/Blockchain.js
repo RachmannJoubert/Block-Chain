@@ -6,7 +6,7 @@ class Blockchain {
     constructor() {
         this.chain = [this.createGenisisBlock()];
         // this.timestamp = this.setDate();
-        this.difficulty = 10;
+        this.difficulty = 3;
         this.pendingTransactions = [];
         this.miningReward = 0.5;
     }
@@ -38,6 +38,28 @@ class Blockchain {
         this.pendingTransactions = [
             new Transaction(null, miningRewardAddress, this.miningReward) 
     ];
+    }
+
+    createTransaction(transaction) {
+        this.pendingTransactions.push(transaction);
+    }
+
+    getAddressBalance(address) {
+        let balance = 0;
+
+        for(const block of this.chain) {
+            for(const transaction of block.transactions) {
+                if(transaction.fromAddress === address) {
+                    balance -= transaction.amount;
+                }
+
+                if(transaction.toAddress === address) {
+                    balance += transaction.amount;
+                }
+            }
+        }
+        
+        return balance;
     }
 
     getLatestBlock() {

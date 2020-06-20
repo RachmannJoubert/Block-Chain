@@ -5,7 +5,7 @@ class Block {
     
     constructor(timestamp, transactions, previousHash = '') {
         this.timestamp = this.setDate();
-        this.transactions = this.transactions;
+        this.transactions = transactions;
         this.previousHash = previousHash;
         this.hash = this.calculateHash;
         this.nonce = 0;
